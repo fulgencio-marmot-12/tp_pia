@@ -8,7 +8,6 @@ class Pokemon:
     def __str__(self):
         return f"[{self.id}] {self.nombre} (Tipo: {self.tipo} | PC: {self.pc})"
 
-# --- ESTRUCTURAS PARA LA PC (Lista Enlazada) ---
 
 class Nodo:
     def __init__(self, pokemon: Pokemon):

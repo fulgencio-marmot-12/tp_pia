@@ -1,0 +1,19 @@
+
+
+nombre = [
+    {"id": 1, "nombre": "Bulbasaur", "tipo": "Planta", "pc": 318},
+    {"id": 2, "nombre": "Ivysaur", "tipo": "Planta", "pc": 405},
+    {"id": 3, "nombre": "Venusaur", "tipo": "Planta", "pc": 525},
+    {"id": 4, "nombre": "Charmander", "tipo": "Fuego", "pc": 309},
+    {"id": 5, "nombre": "Charmeleon", "tipo": "Fuego", "pc": 405},
+    {"id": 6, "nombre": "Charizard", "tipo": "Fuego", "pc": 534},
+    {"id": 7, "nombre": "Squirtle", "tipo": "Agua", "pc": 314},
+    {"id": 8, "nombre": "Wartortle", "tipo": "Agua", "pc": 405},
+    {"id": 9, "nombre": "Blastoise", "tipo": "Agua", "pc": 530},
+    {"id": 25, "nombre": "Pikachu", "tipo": "Electrico", "pc": 320},
+    {"id": 26, "nombre": "Raichu", "tipo": "Electrico", "pc": 485},
+    {"id": 16, "nombre": "Pidgey", "tipo": "Normal", "pc": 251},
+    {"id": 17, "nombre": "Pidgeotto", "tipo": "Normal", "pc": 349},
+    {"id": 19, "nombre": "Rattata", "tipo": "Normal", "pc": 253},
+    {"id": 41, "nombre": "Zubat", "tipo": "Veneno", "pc": 245}
+        ]
