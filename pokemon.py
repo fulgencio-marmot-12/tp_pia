@@ -1,3 +1,31 @@
+import json
+
+class Pokedex:
+    #implementacion de hash map
+
+    def __init__(self, archivo_json):
+        self.registros = {}
+        self._cargar_desde_json(archivo_json)
+
+    def _cargar_desde_json(self, archivo_json):
+        with open(archivo_json, "r", encoding="utf-8") as f:
+            datos = json.load(f)
+        for item in datos:
+            pokemon = Pokemon(item["id"], item["nombre"], item["tipo"], item["poder_combate"])
+            self.registros[pokemon.id] = pokemon
+
+    def agregar(self, pokemon):
+        self.registros[pokemon.id] = pokemon
+
+    def obtener_por_id(self, id_pokemon):
+        return self.registros.get(id_pokemon)
+
+    def obtener_todos(self):
+        return list(self.registros.values())
+
+    def obtener_ids_ordenados(self):
+        return sorted(self.registros.keys())
+#clase del pokemon
 class Pokemon:
     def __init__(self, id_pokemon: int, nombre: str, tipo: str, pc: int):
         self.id = id_pokemon

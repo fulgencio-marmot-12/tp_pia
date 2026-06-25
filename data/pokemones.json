@@ -1,0 +1,17 @@
+[
+    {"id": 1, "nombre": "Bulbasaur", "tipo": "Planta", "poder_combate": 1850},
+    {"id": 2, "nombre": "Charmander", "tipo": "Fuego", "poder_combate": 1780},
+    {"id": 3, "nombre": "Squirtle", "tipo": "Agua", "poder_combate": 1760},
+    {"id": 4, "nombre": "Pikachu", "tipo": "Eléctrico", "poder_combate": 1620},
+    {"id": 5, "nombre": "Pidgeotto", "tipo": "Volador", "poder_combate": 1490},
+    {"id": 6, "nombre": "Rattata", "tipo": "Normal", "poder_combate": 980},
+    {"id": 7, "nombre": "Zubat", "tipo": "Veneno", "poder_combate": 1050},
+    {"id": 8, "nombre": "Geodude", "tipo": "Roca", "poder_combate": 1530},
+    {"id": 9, "nombre": "Onix", "tipo": "Roca", "poder_combate": 2100},
+    {"id": 10, "nombre": "Gengar", "tipo": "Fantasma", "poder_combate": 2450},
+    {"id": 11, "nombre": "Machop", "tipo": "Lucha", "poder_combate": 1400},
+    {"id": 12, "nombre": "Eevee", "tipo": "Normal", "poder_combate": 1300},
+    {"id": 13, "nombre": "Snorlax", "tipo": "Normal", "poder_combate": 2600},
+    {"id": 14, "nombre": "Charizard", "tipo": "Fuego", "poder_combate": 2900},
+    {"id": 15, "nombre": "Mewtwo", "tipo": "Psíquico", "poder_combate": 3400}
+]
