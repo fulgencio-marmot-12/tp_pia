@@ -1,7 +1,7 @@
 # Implementación de funciones de búsqueda
 
 def busquedalineal(lista_pokemon, nombre):
-    """Recorre el equipo principal  buscando un Pokemon por nombre"""
+    """recorre el equipo principal  buscando un Pokemon por nombre"""
     for pokemon in lista_pokemon:
         if pokemon.nombre.lower() == nombre.lower():
             return pokemon
@@ -9,7 +9,7 @@ def busquedalineal(lista_pokemon, nombre):
 
 
 def busquedabinaria(ids_ordenados, pokedex, id_buscado):
-    """Búsqueda binaria sobre la lista ordenada de ids de la Pokedex"""
+    """busqueda binaria sobre la lista ordenada de ids de la pokedex"""
     izquierda = 0
     derecha = len(ids_ordenados) - 1
     while izquierda <= derecha:
