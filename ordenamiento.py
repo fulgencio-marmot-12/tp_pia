@@ -1,5 +1,6 @@
+#ordenamos por nombre, tipo y poder usando buble sort insertion sort y quick sort
+
 def bubblesort(lista_pokemon):
-    """Ordena por nombre usando bubble sort"""
     lista = lista_pokemon[:]
     n = len(lista)
     for i in range(n - 1):
@@ -10,7 +11,6 @@ def bubblesort(lista_pokemon):
 
 
 def insertionsort(lista_pokemon):
-    """Agrupa y ordena por tipo usando insertion sort"""
     lista = lista_pokemon[:]
     for i in range(1, len(lista)):
         actual = lista[i]
@@ -23,7 +23,6 @@ def insertionsort(lista_pokemon):
 
 
 def quicksort(lista_pokemon):
-    """Ordena por poder de combate usando quick sort"""
     if len(lista_pokemon) <= 1:
         return lista_pokemon[:]
     pivote = lista_pokemon[len(lista_pokemon) // 2]

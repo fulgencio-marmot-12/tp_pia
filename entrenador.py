@@ -7,7 +7,7 @@ TAMANIO_MAXIMO_EQUIPO = 6
 TAMANIO_MAXIMO_TRANSFERENCIAS = 5
 
 
-class entrenador:
+class Entrenador:
     def __init__(self, archivo_medallas=None):
         self.equipo_principal = []  # Array (lista) con tope de 6
         self.pc = ListaEnlazada()
