@@ -17,11 +17,11 @@ class Pokemon:
 #hash set
 class RegistroMedallas:
     def __init__(self, archivo_json=None):
-        self.medallas = set()
+        self.medallas = set() # el set
         if archivo_json:
-            self._cargar_desde_json(archivo_json)
+            self.cargar_desde_json(archivo_json)
 
-    def _cargar_desde_json(self, archivo_json):
+    def cargar_desde_json(self, archivo_json):
         with open(archivo_json, "r", encoding="utf-8") as f:
             datos = json.load(f)
         for medalla in datos:
@@ -29,13 +29,13 @@ class RegistroMedallas:
 
     def agregar_medalla(self, nombre_medalla):
         if nombre_medalla in self.medallas:
-            print(f"Ya posees la '{nombre_medalla}'. No se puede duplicar.")
+            print(f"ya tenes la '{nombre_medalla}', no se puede duplicar")
             return False
         self.medallas.add(nombre_medalla)
-        print(f"¡Has obtenido la '{nombre_medalla}'!")
+        print(f"has obtenido la '{nombre_medalla}'")
         return True
 
-    def listar(self):
+    def mostrar(self):
         return sorted(self.medallas)
 
 # base de datos donde se guardan todos los pokemones utilizando hash map
@@ -44,9 +44,9 @@ class Pokedex:
 
     def __init__(self, archivo_json):
         self.registros = {}
-        self._cargar_desde_json(archivo_json)
+        self.cargar_desde_json(archivo_json)
 
-    def _cargar_desde_json(self, archivo_json):
+    def cargar_desde_json(self, archivo_json):
         with open(archivo_json, "r", encoding="utf-8") as f:
             datos = json.load(f)
         for item in datos:

@@ -30,15 +30,15 @@ def mostrar_pokedex(pokedex):
 
 
 def mostrar_equipo(entrenador):
-    print("\n--- EQUIPO PRINCIPAL ---")
+    print("\n EQUIPO PRINCIPAL ")
     if not entrenador.equipo_principal:
-        print("El equipo está vacío.")
+        print("el equipo está vacio")
     for pokemon in entrenador.equipo_principal:
         print(pokemon)
 
 
 def mostrar_pc(entrenador):
-    print("\n--- ALMACENAMIENTO (PC) ---")
+    print("\n ALMACENAMIENTO PC ")
     pokemones_pc = entrenador.pc.a_lista_python()
     if not pokemones_pc:
         print("La PC está vacía.")
@@ -52,20 +52,20 @@ def capturar_pokemon(entrenador):
     poder_combate = random.randint(150, 2800)
     contador_ids_salvajes += 1
     nuevo_pokemon = Pokemon(contador_ids_salvajes, nombre, tipo, poder_combate)
-    print(f"\n[SISTEMA DE CAPTURA] Ha aparecido un {nombre.upper()} salvaje (PC: {poder_combate}).")
-    print("¡Captura exitosa!")
+    print(f"\nSISTEMA DE CAPTURA aparecio un {nombre.upper()} salvaje (PC: {poder_combate}).")
+    print("Captura exitosa")
     entrenador.capturar_pokemon(nuevo_pokemon)
 
 
 def ordenar_pc(entrenador):
     pokemones_pc = entrenador.pc.a_lista_python()
     if not pokemones_pc:
-        print("La PC está vacía, no hay nada para ordenar.")
+        print("La PC está vacía, no hay nada para ordenar")
         return
     print("\n--- ORDENAR PC ---")
-    print("1. Alfabético (bubble sort)")
-    print("2. Por tipo (insertion sort)")
-    print("3. Por poder de combate (quick sort)")
+    print("1. Alfabético por bubble sort")
+    print("2. Por tipo por insertion sort")
+    print("3. Por poder de combate por quick sort")
     opcion = input("Seleccione una opción: ")
     if opcion == "1":
         ordenados = bubblesort(pokemones_pc)
@@ -74,35 +74,35 @@ def ordenar_pc(entrenador):
     elif opcion == "3":
         ordenados = quicksort(pokemones_pc)
     else:
-        print("Opción inválida.")
+        print("opción inválida")
         return
-    entrenador.pc.cargar_desde_lista_python(ordenados)
+    entrenador.pc.cargar_desde_lista(ordenados)
     print("PC ordenada exitosamente:")
     for pokemon in ordenados:
         print(pokemon)
 
 
 def buscar_en_equipo(entrenador):
-    nombre = input("Nombre del Pokémon a buscar en el equipo: ")
+    nombre = input("nombre del Pokémon a buscar en el equipo: ")
     encontrado = busquedalineal(entrenador.equipo_principal, nombre)
     if encontrado:
-        print(f"¡Encontrado! {encontrado}")
+        print(f"encontrado {encontrado}")
     else:
-        print(f"{nombre} no se encuentra en el Equipo Principal.")
+        print(f"{nombre} no se encuentra en el equipo orincipal")
 
 
 def consultar_pokedex_por_id(pokedex):
     try:
         id_buscado = int(input("Ingrese el ID a buscar en la Pokédex: "))
     except ValueError:
-        print("Debe ingresar un número entero.")
+        print("Debe ingresar un número entero")
         return
     ids_ordenados = pokedex.obtener_ids_ordenados()
     resultado = busquedabinaria(ids_ordenados, pokedex, id_buscado)
     if resultado:
-        print(f"Pokémon encontrado: {resultado}")
+        print(f"pokemon encontrado: {resultado}")
     else:
-        print(f"No existe ningún Pokémon con ID {id_buscado} en la Pokédex.")
+        print(f"no existe ningún Pokémon con ID {id_buscado} en la Pokédex")
 
 
 def transferir_a_oak(entrenador):
@@ -149,14 +149,12 @@ def mostrar_menu():
 
 
 def main():
-    print("=" * 40)
     print("SISTEMA DE GESTIÓN: POKÉMON HUERGO")
-    print("=" * 40)
-    print("Inicializando motor de base de datos... OK.")
+    print("Inicializando motor de base de datos")
     pokedex = Pokedex(RUTA_POKEMONES)
-    print(f"Cargando Pokédex Nacional ({len(pokedex.obtener_todos())} registros)... OK.")
+    print(f"Cargando Pokédex Nacional ({len(pokedex.obtener_todos())} registros)")
     entrenador = Entrenador(RUTA_MEDALLAS)
-    print("Validando registros de medallas... OK.")
+    print("Validando registros de medallas")
 
     while True:
         mostrar_menu()

@@ -1,0 +1,35 @@
+MODULO 6 - ANALISIS DE COMPLEJIDAD
+
+1) Insertar al final del equipo principal conyta al inicio de la pc 
+
+Equipo principal: agregar con append() al final de una lista de Python es O(1).
+Python reserva memoria extra al crecer la lista, entonces la mayoria
+de las veces no hace falta mover todos los elementos.PC: insertar al inicio de la lista enlazada es O(1) real, porque solo se crea
+un nodo nuevo y se actualiza la cabeza, sin recorrer el resto de la estructura.
+osea que las dos son O(1), 1 por el array y la lista enlazada porque insertar al inicio nunca
+depende de cuantos elementos ya tiene.
+
+2) Por que la pokedex usa un hash map en vez de una lista comun
+
+En una lista normal, buscar por id implica recorrer los elementos uno por uno
+hasta encontrar el que coincide, en el peor caso es O(n).
+
+En un hash map (dict), la clave se transforma con una funcion de hash en un
+indice interno, entonces se puede acceder directo al valor sin recorrer los
+demas registros. Esto da O(1) en el caso promedio.
+
+Con 15 pokemon casi no se nota la diferencia, pero si la pokedex creciera a
+cientos o miles de registros el hash map se mantiene practicamente constante
+mientras que la lista se va poniendo cada vez mas lenta.
+
+3) Bubble sort vs quick sort ordenando una pc con 6000 pokemon
+
+Bubble sort: peor caso O(n al cuadrado)
+
+Quick sort: caso promedio O(n log n). El peorcaso de quick sort tambien es O(n al cuadrado)
+y pasa cuando el pivote elegido genera particiones muy desparejas,
+pero eligiendo el pivote del medio ese caso se vuelve poco probable en la practica.
+
+osea que para una pc con miles de pokemon, quick sort rinde mucho mejor
+que bubble sort en el caso promedio, aunque en el peor caso teorico ambos
+terminan siendo O(n al cuadrado)
