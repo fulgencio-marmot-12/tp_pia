@@ -83,7 +83,7 @@ def ordenar_pc(entrenador):
 
 
 def buscar_en_equipo(entrenador):
-    nombre = input("nombre del Pokémon a buscar en el equipo: ")
+    nombre = input("nombre del pokemon a buscar en el equipo: ")
     encontrado = busquedalineal(entrenador.equipo_principal, nombre)
     if encontrado:
         print(f"encontrado {encontrado}")
@@ -93,20 +93,20 @@ def buscar_en_equipo(entrenador):
 
 def consultar_pokedex_por_id(pokedex):
     try:
-        id_buscado = int(input("Ingrese el ID a buscar en la Pokédex: "))
+        id_buscado = int(input("ingrese el ID a buscar en la Pokédex: "))
     except ValueError:
-        print("Debe ingresar un número entero")
+        print("ingresa un número entero")
         return
     ids_ordenados = pokedex.obtener_ids_ordenados()
     resultado = busquedabinaria(ids_ordenados, pokedex, id_buscado)
     if resultado:
         print(f"pokemon encontrado: {resultado}")
     else:
-        print(f"no existe ningún Pokémon con ID {id_buscado} en la Pokédex")
+        print(f"no existe ningún pokemon con ID {id_buscado} en la Pokedex")
 
 
 def transferir_a_oak(entrenador):
-    nombre = input("Nombre del Pokémon a transferir desde la PC: ")
+    nombre = input("nombre del pokemon a transferir desde la PC: ")
     entrenador.transferir_a_oak(nombre)
 
 
@@ -117,7 +117,7 @@ def desafiar_gimnasio(entrenador):
     try:
         opcion = int(input("Elija un gimnasio (1-8): "))
     except ValueError:
-        print("Opción inválida.")
+        print("opción invalida")
         return
     if opcion < 1 or opcion > len(GIMNASIOS):
         print("Opción inválida.")
@@ -126,7 +126,7 @@ def desafiar_gimnasio(entrenador):
     print(f"\nDesafiando al Líder del gimnasio de {medalla.replace('Medalla ', '')}...")
     gano = random.choice([True, False])
     if gano:
-        print("¡Has ganado la batalla!")
+        print("has ganado la batalla")
         entrenador.medallas.agregar_medalla(medalla)
     else:
         print("Has perdido la batalla. El líder te espera para la revancha.")
@@ -137,19 +137,19 @@ def mostrar_menu():
     print("1. Ver Pokédex")
     print("2. Ver Equipo Principal")
     print("3. Ver PC")
-    print("4. Capturar nuevo Pokémon")
+    print("4. Capturar nuevo pokemon")
     print("5. Ordenar PC")
-    print("6. Buscar Pokémon en Equipo")
-    print("7. Consultar Pokémon por ID en Pokédex")
-    print("8. Enviar Pokémon al Centro Pokémon")
-    print("9. Transferir Pokémon al Profesor Oak")
+    print("6. Buscar pokemon en Equipo")
+    print("7. Consultar pokemon por ID en Pokédex")
+    print("8. Enviar pokemon al Centro pokemon")
+    print("9. Transferir pokemon al Profesor Oak")
     print("10. Deshacer última transferencia")
     print("11. Desafiar Líder de Gimnasio")
     print("12. Salir del sistema")
 
 
 def main():
-    print("SISTEMA DE GESTIÓN: POKÉMON HUERGO")
+    print("SISTEMA DE GESTIÓN: pokemon HUERGO")
     print("Inicializando motor de base de datos")
     pokedex = Pokedex(RUTA_POKEMONES)
     print(f"Cargando Pokédex Nacional ({len(pokedex.obtener_todos())} registros)")

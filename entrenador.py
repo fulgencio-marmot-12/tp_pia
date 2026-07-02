@@ -17,7 +17,7 @@ class Entrenador:
         if len(self.equipo_principal) < TAMAÑO_MAXIMO_EQUIPO:
             self.equipo_principal.append(pokemon)
             print(f"{pokemon.nombre} se unio al equipo principal "
-                  f"({len(self.equipo_principal)}/{TAMAÑO_MAXIMO_EQUIPO}).")
+                f"({len(self.equipo_principal)}/{TAMAÑO_MAXIMO_EQUIPO}).")
         else:
             print("el equipo Principal esta lleno ")
             self.pc.insertar_al_inicio(pokemon)

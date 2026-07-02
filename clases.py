@@ -60,7 +60,7 @@ class ListaEnlazada:
 
 #archivo para implementar la stack
 """segun la consigna
-Cuando el usuario decide sanar a su equipo, los Pokémon ingresan a la cola y son procesados uno por uno, simulando el tiempo de curación
+Cuando el usuario decide sanar a su equipo, los pokemon ingresan a la cola y son procesados uno por uno, simulando el tiempo de curación
 """
 
 class Stack:
