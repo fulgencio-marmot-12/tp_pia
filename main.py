@@ -1,6 +1,6 @@
 import random
 
-from clases import Pokemon, Pokedex
+from clases import *
 from ordenamiento import bubblesort, insertionsort, quicksort
 from entrenador import Entrenador
 from busqueda import busquedabinaria, busquedalineal

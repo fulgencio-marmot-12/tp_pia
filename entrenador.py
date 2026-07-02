@@ -1,6 +1,4 @@
-from listaenlazada import ListaEnlazada
-from stack import stack
-from queue import Queue
+from clases import ListaEnlazada, Stack, Queue
 from clases import RegistroMedallas
 
 TAMAÑO_MAXIMO_EQUIPO = 6
@@ -12,7 +10,7 @@ class Entrenador:
         self.equipo_principal = []  # Array con maximo de 6
         self.pc = ListaEnlazada()
         self.centro_pokemon = Queue()
-        self.transferencias = stack(capacidad_maxima=TAMAÑO_MAXIMO_TRANSFERENCIAS)
+        self.transferencias = Stack(capacidad_maxima=TAMAÑO_MAXIMO_TRANSFERENCIAS)
         self.medallas = RegistroMedallas(archivo_medallas)
 
     def capturar_pokemon(self, pokemon):

@@ -2,6 +2,112 @@
 
 import json
 
+
+#sistema de almacenamiento de la pc con una lista enlazada(nodo y lista enlazada)
+
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato
+        self.siguiente = None
+
+
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None
+        self.tamanio = 0
+
+    def insertar_al_inicio(self, dato):
+        nodo_nuevo = Nodo(dato)
+        nodo_nuevo.siguiente = self.cabeza
+        self.cabeza = nodo_nuevo
+        self.tamanio += 1
+
+    def eliminar(self, dato):
+        actual = self.cabeza
+        anterior = None
+
+        while actual is not None:
+            if actual.dato == dato:
+                if anterior is None:
+                    self.cabeza = actual.siguiente
+                else:
+                    anterior.siguiente = actual.siguiente
+                self.tamanio -= 1
+                return True
+            anterior = actual
+            actual = actual.siguiente
+
+        return False
+
+    def a_lista_python(self):
+        resultado = []
+        actual = self.cabeza
+        while actual is not None:
+            resultado.append(actual.dato)
+            actual = actual.siguiente
+        return resultado
+
+    def cargar_desde_lista(self, lista):
+        self.cabeza = None
+        self.tamanio = 0
+        i = len(lista) - 1
+        while i >= 0:
+            self.insertar_al_inicio(lista[i])
+            i -= 1
+
+    def esta_vacia(self):
+        return self.cabeza is None
+
+#archivo para implementar la stack
+"""segun la consigna
+Cuando el usuario decide sanar a su equipo, los Pokémon ingresan a la cola y son procesados uno por uno, simulando el tiempo de curación
+"""
+
+class Stack:
+    def __init__(self, capacidad_maxima=None):
+        self.elementos = []
+        self.capacidad_maxima = capacidad_maxima
+
+    def apilar(self, dato):
+        if self.capacidad_maxima is not None and len(self.elementos) >= self.capacidad_maxima:
+            self.elementos.pop(0)
+        self.elementos.append(dato)
+
+    def desapilar(self):
+        if self.esta_vacia():
+            return None
+        return self.elementos.pop()
+
+    def esta_vacia(self):
+        return len(self.elementos) == 0
+
+    def __len__(self):
+        return len(self.elementos)
+
+#implementacion de la queue o queque
+
+# queue hecha con lista comun, sin clase
+# se usa en el centro pokemon
+
+class Queue:
+
+    def __init__(self):
+        self.elementos = []
+
+    def agregar(self, dato):
+        self.elementos.append(dato)
+
+    def sacar(self):
+        if self.esta_vacia():
+            return None
+        return self.elementos.pop(0)
+
+    def esta_vacia(self):
+        return len(self.elementos) == 0
+
+    def __len__(self):
+        return len(self.elementos)
+    
 class Pokemon:
     """implemento la clase pokemon del modulo 1"""
 
